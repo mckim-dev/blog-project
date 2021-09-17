@@ -1,29 +1,8 @@
 <h1>Create New Article </h1>
-<% if @article.errors.any? %>
-  <h3> We are unable to save your article due to errors in your submission: </h3>
-  <ul>
-    <% @article.errors.full_messages.each do |er| %>
-      <li><%= er %></li>
-    <% end %>
-  </ul>
-<% end %>  
 
-<%= form_with scope: :article, url: articles_path, local: true do |form| %>
-  <p>
-    <%= form.label :title %> <br />
-    <%= form.text_field :title %>
-  </p>
+<%= render 'errormsg' %>
+<%= render 'form' %>
 
-  <p>
-    <%= form.label :description %><br />
-    <%= form.text_area :description %>
-  </p>
-
-  <p> 
-    <%= form.submit %>
-  </p>
-
-<% end %>
 
 <hr />
 <%= link_to '<< Back To List', articles_path %>   

@@ -1,0 +1,8 @@
+<% if @article.errors.any? %>
+  <h3> We are unable to save your article due to errors in your submission: </h3>
+  <ul>
+    <% @article.errors.full_messages.each do |er| %>
+      <li><%= er %></li>
+    <% end %>
+  </ul>
+<% end %>
