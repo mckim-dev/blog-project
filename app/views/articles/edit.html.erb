@@ -25,3 +25,7 @@
     </p>
 
 <% end %>
+
+<hr />
+<%= link_to '<< Back To List', articles_path %>  | 
+<%= link_to 'Delete', article_path(@article), data: {confirm: "Confirm you want to delate this article!"} %> 
