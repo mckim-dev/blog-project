@@ -1,0 +1,56 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+html, body {
+    height:100%;
+}
+#page-content {
+  flex: 1 0 auto;
+  background-color: rgb(211, 222, 231);
+}
+.navbar {
+  background-color: #053f61 !important;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #053f61;
+}
+#logo {
+  font-size: 1.6em;
+  color:rgb(140, 166, 187);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+} 
+.jumbotron {
+  background-image: asset-url('highway_OOP.jpg');
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.mydark {
+    background-color: #053f61;
+}
+.mydarktext {
+    color: #053f61;
+    font-weight: bold;
+}
+.mysecondary {
+    background-color:rgb(140, 166, 187);
+}
+#home-container {
+    margin-top: 25px;
+  }
+#login {
+    color: white;
+    background-color: #053f61;
+    border-color: #053f61;
+}
+#login:hover {
+    color: white;
+    background-color:rgb(140, 166, 187);
+    border-color: rgb(140, 166, 187);
+}
+#sticky-footer {
+    flex-shrink: none;
+    background-color: #053f61;
+} 

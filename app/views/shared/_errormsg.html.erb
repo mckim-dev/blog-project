@@ -1,0 +1,13 @@
+<% if @article.errors.any? %>
+  <div class="alert alert-danger alert-dismissible fade show shadow-sm mb-4 p-5 rounded" role="alert">
+    <h4 class="alert-heading">We are unable to save your article due to errors in your submission:</h4>
+    <ul>
+      <% @article.errors.full_messages.each do |er| %>
+        <li><%= er %></li>
+      <% end %>
+    </ul>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>

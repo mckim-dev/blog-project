@@ -1,7 +1,11 @@
-<h1> Edit Article </h1>
-<%= render 'errormsg' %>
-<%= render 'form' %>
+<div id="page-content">
+  <div class="container my-5">
+    <h1 class="display-4">Edit Article</h1>
+      <br/>
+    <%= render 'form' %>
 
-<hr />
-<%= link_to '<< Back To List', articles_path %>  | 
-<%= link_to 'Delete', article_path(@article), data: {confirm: "Confirm you want to delate this article!"} %> 
+    <hr />
+    <%= link_to '<< Back To List', articles_path, class:"mydarktext" %> | 
+    <%= link_to 'Delete', article_path(@article), class:"mydarktext", data: {confirm: "Confirm you want to delate this article!"} %> 
+  </div>
+</div>

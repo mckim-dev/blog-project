@@ -1,9 +1,21 @@
-<h1>Article Details - show</h1>
-<div>
-<p><strong> Title: <%= @article.title %> </strong></p>
-<p><strong> Description: <%= @article.description %></strong> </p>
+<div class="container my-5">
+  <h1 class="display-4"><%= @article.title %></h1>
+
+  <div class="card shadow my-5 bg-white rounded">
+    <h5 class="card-header text-white mysecondary">CATEGORY NAME</h5>
+    <div class="card-body">
+      <small> Author Name </small> <br />
+      <div class="card-text">
+        <%= simple_format(@article.description) %>
+      </div>
+      <%= link_to 'EDIT', edit_article_path(@article), class: "btn btn-dark" %> &nbsp; 
+      <%= link_to 'DELETE', article_path(@article), method: :delete, data: {confirm: "Confirm you want to delate this article!"}, class:"btn btn-danger" %>
+    </div>
+    <div class="card-footer text-white mydark text-center">
+      <em>Created: <%= time_ago_in_words(@article.created_at) %> ago.</em> | <strong> Updated: <%= time_ago_in_words(@article.updated_at) %> ago.</strong>
+    </div>
+  </div>
+    <hr />
+    <%= link_to '<< Back To List', articles_path %>  
+    <br />
 </div>
-<hr />
-<%= link_to '<< Back To List', articles_path %>  | 
-<%= link_to 'Edit', edit_article_path(@article) %> | 
-<%= link_to 'Delete', article_path(@article), data: {confirm: "Confirm you want to delate this article!"} %> 
