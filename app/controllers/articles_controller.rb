@@ -19,6 +19,7 @@ class ArticlesController < ApplicationController
 
     def create
         @article = Article.new(validateParams)
+        @article.user = User.first
         if @article.save
           flash[:notice] = "Your article has been created and saved." #flash hash message notices and alerts will appear within the body template of the app html
           redirect_to @article
