@@ -1,6 +1,8 @@
 <div id="page-content">
   <div class="container my-5">
     <h1 class="display-4">Edit Article</h1>
+    <p><small><strong>Author:</strong> <em><%= @article.user.username %> </em></small></p>
+      <br />
       <br/>
     <%= render 'form' %>
 

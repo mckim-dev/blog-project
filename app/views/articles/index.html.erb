@@ -6,7 +6,7 @@
   <h5 class="card-header text-white mysecondary">CATEGORY NAME</h5>
   <div class="card-body">
     <h5 class="card-title"><%= link_to article.title, article_path(article), class:"text-dark"%></h5>
-    <small> Author Name </small> <br />
+    <small><strong>Author:</strong> <em><%= article.user.username %> </em></small> <br />
     <p class="card-text"><%= truncate(article.description, length: 75) %></p>
     
     <%= link_to 'VIEW', article_path(article), class: "btn text-white mysecondary" %> 
