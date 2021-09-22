@@ -54,3 +54,11 @@ h1, h2, h3, h4, h5 {
     flex-shrink: none;
     background-color: #053f61;
 } 
+.profile-img5 {
+  height: 200px;
+  width: 200px;
+  background-image: asset-url('img_avatar5.png');
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

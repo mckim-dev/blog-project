@@ -15,17 +15,14 @@
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Authors
+        Articles
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="#">Category 1</a>
-        <a class="dropdown-item" href="#">Category 2</a>
+        <%= link_to "Create New Article", new_article_path, class: "dropdown-item" %>
+        <%= link_to "Article List", articles_path, class: "dropdown-item" %>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">Category 3</a>
       </div>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="<%= articles_path %>" tabindex="-1" aria-disabled="true">Articles</a>
     </li>
   </ul>
   <form class="form-inline my-2 my-lg-0">
