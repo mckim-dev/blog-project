@@ -5,14 +5,40 @@ html, body {
 }
 #page-content {
   flex: 1 0 auto;
-  background-color: rgb(211, 222, 231);
+  background-image: asset-url('homeBg.jpg');
+  background-position:  top center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+#altbg {
+  flex: 1 0 auto;
+  background-image: asset-url('form_bg.jpg');
+  background-position:  top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#altbgfixed {
+  flex: 1 0 auto;
+  background-image: asset-url('form_bg.jpg');
+  background-position:  top center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.welcome {
+  flex: 1 0 auto;
+  background-image: asset-url('welcome.png');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .navbar {
-  background-color: #053f61 !important;
+  background-color:#184d94 !important;
 }
 
 h1, h2, h3, h4, h5 {
-  color: #053f61;
+  color: #184d94;
 }
 #logo {
   font-size: 1.6em;
@@ -22,37 +48,39 @@ h1, h2, h3, h4, h5 {
   font-weight: bold;
 } 
 .jumbotron {
-  background-image: asset-url('highway_OOP.jpg');
-  background-position: left top;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color:transparent;
+  padding:6em;
 }
 .mydark {
-    background-color: #053f61;
+    background-color: #184d94;
 }
 .mydarktext {
-    color: #053f61;
+    color: #184d94;
     font-weight: bold;
 }
 .mysecondary {
     background-color:rgb(140, 166, 187);
 }
+.mysand {
+  background-color: #d59071;
+}
+
 #home-container {
     margin-top: 25px;
   }
 #login {
     color: white;
-    background-color: #053f61;
+    background-color: #184d94;
     border-color: #053f61;
 }
 #login:hover {
     color: white;
-    background-color:rgb(140, 166, 187);
+    background-color: #102550;
     border-color: rgb(140, 166, 187);
 }
 #sticky-footer {
     flex-shrink: none;
-    background-color: #053f61;
+    background-color: #184d94;
 } 
 .profile-img5 {
   height: 200px;
