@@ -1,8 +1,8 @@
-<% if @article.errors.any? %>
+<% if objer.errors.any? %>
   <div class="alert alert-danger alert-dismissible fade show shadow-sm mb-4 p-5 rounded" role="alert">
     <h4 class="alert-heading">We are unable to save your article due to errors in your submission:</h4>
     <ul>
-      <% @article.errors.full_messages.each do |er| %>
+      <% objer.errors.full_messages.each do |er| %>
         <li><%= er %></li>
       <% end %>
     </ul>
