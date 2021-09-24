@@ -1,0 +1,40 @@
+<div id="altbgfixed">
+  <div class="container mt-4">
+
+    <div class="row">
+      <h1 class="display-4">List of Users</h1>
+    </div>
+
+    <div class="row">
+      <% @users.each do |user| %>
+
+      <div class="col-6 col-sm-4">
+
+        <div class="card shadow mb-5 bg-white rounded">
+
+          <div class="card-body text-center">
+            <h3><%= link_to user.username, user, class: "mysand-text" %></h3>
+            <hr class="col-1 my-3" />
+            <h5 class="card-title float-right">
+              <%= link_to gravatar_for(user, size:125), user %>
+            </h5>
+
+            <p class="card-text">Article count: <%= user.articles.count %> </p> 
+          
+	    <%= link_to "View Profile", user, class: "btn text-white mysand mb-1" %> <br />
+            <%= link_to "Edit Profile", edit_user_path(user), class: "btn btn-dark" %> 
+           
+          </div>
+
+          <div class="card-footer text-white mydark text-center">
+            <p><strong><%= user.username %></strong> <em>Joined: <%= time_ago_in_words(user.created_at) %> ago.</em></p>
+          </div>
+
+        </div>
+
+      </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>
