@@ -3,19 +3,25 @@
   <div class="container my-5">  
     <div class="card mb-4 shadow">
       <div class="row no-gutters">
-        <div class="col p-1">
+        <div class="col">
           <div class="card-body">
-
-            <div class="d-flex justify-content-between">
-              <%= image_tag("img_avatar5.png", size: "75", alt: "user") %> &nbsp;
-              <%= image_tag("img_avatar4.png", size: "75", alt: "user") %> &nbsp;
-              <%= image_tag("img_avatar6.png", size: "75", alt: "user") %> &nbsp;
-              <%= image_tag("img_avatar2.png", size: "75", alt: "user") %> &nbsp;
-              <h5 class="display-4">OUR MEMBERS</h5> 
-              &nbsp; <%= image_tag("img_avatar2.png", size: "75", alt: "user") %> &nbsp;
-              <%= image_tag("img_avatar5.png", size: "75", alt: "user") %> &nbsp;
-              <%= image_tag("img_avatar3.png", size: "75", alt: "user") %> &nbsp;
-              <%= image_tag("img_avatar6.png", size: "75", alt: "user") %>
+          <div class ="col-lg"><h5 class="display-4">OUR MEMBERS</h5></div>
+            <div class="d-flex flex-row align-content-start flex-wrap">
+              <div class="col-xs mb-1"><%= image_tag("img_avatar6.png", size: "67", alt: "user") %>&nbsp;</div>
+              <div class="col-xs mb-1"><%= image_tag("img_avatar4.png", size: "67", alt: "user") %>&nbsp;</div>
+              <div class="col-xs mb-1"><%= image_tag("img_avatar3.png", size: "67", alt: "user") %>&nbsp;</div>
+              <div class="col-xs mb-1"><%= image_tag("img_avatar5.png", size: "67", alt: "user") %>&nbsp;</div>
+              <div class="col-xs mb-1"><%= image_tag("img_avatar4.png", size: "67", alt: "user") %>&nbsp;</div>
+              <div class="col-xs mb-1"><%= image_tag("img_avatar3.png", size: "67", alt: "user") %>&nbsp;</div>
+              <div class="col-xs mb-1"><%= image_tag("img_avatar6.png", size: "67", alt: "user") %>&nbsp;</div>
+              <div class="col-xs mb-1"><%= image_tag("img_avatar2.png", size: "67", alt: "user") %>&nbsp;</div>
+              <div class="col-xs mb-1"><%= image_tag("img_avatar6.png", size: "67", alt: "user") %>&nbsp;</div>
+              <div class="col-xs mb-1"><%= image_tag("img_avatar3.png", size: "67", alt: "user") %>&nbsp;</div>
+              <div class="col-xs mb-1"><%= image_tag("img_avatar5.png", size: "67", alt: "user") %>&nbsp;</div>
+              <div class="col-xs mb-1"><%= image_tag("img_avatar4.png", size: "67", alt: "user") %>&nbsp;</div>
+              <div class="col-xs mb-1"><%= image_tag("img_avatar3.png", size: "67", alt: "user") %>&nbsp;</div>
+              <div class="col-xs mb-1"><%= image_tag("img_avatar5.png", size: "67", alt: "user") %>&nbsp;</div>
+              <div class="col-xs mb-1"><%= image_tag("img_avatar4.png", size: "67", alt: "user") %></div>
             </div>
 
           </div>
@@ -27,7 +33,7 @@
     <div class="row">
       <% @users.each do |user| %>
 
-      <div class="col-6 col-sm-4">
+      <div class="col-lg-4 col-md-6">
 
         <div class="card shadow mb-5 bg-white rounded">
 
