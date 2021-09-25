@@ -25,12 +25,13 @@
     </div>
 
     <div class="row">
-    
+    <% random_num = 1 %>
       <% @articles.each do |article| %>
       <div class="col-6">
         <div class="card shadow mb-4 bg-white rounded">     
           <div class="card-body">
-          <%= image_tag("https://picsum.photos/id/1011/500/200") %>
+          
+          <%= image_tag("https://picsum.photos/500/200?random=#{random_num}&blur=2") %>
             <h5 class="card-title">
                 <%= link_to article.title, article_path(article), class:"text-dark" %>
             </h5>
@@ -54,7 +55,8 @@
           </div>
 
         </div>
-      </div>        
+      </div>  
+      <% random_num = random_num + 1 %>      
       <% end %>
 
     </div>

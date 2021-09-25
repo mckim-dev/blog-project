@@ -1,9 +1,28 @@
-<div id="altbgfixed">
-  <div class="container mt-4">
 
-    <div class="row">
-      <h1 class="display-4">List of Users</h1>
+<div id="altbgfixed">
+  <div class="container my-5">  
+    <div class="card mb-4 shadow">
+      <div class="row no-gutters">
+        <div class="col p-1">
+          <div class="card-body">
+
+            <div class="d-flex justify-content-between">
+              <%= image_tag("img_avatar5.png", size: "75", alt: "user") %> &nbsp;
+              <%= image_tag("img_avatar4.png", size: "75", alt: "user") %> &nbsp;
+              <%= image_tag("img_avatar6.png", size: "75", alt: "user") %> &nbsp;
+              <%= image_tag("img_avatar2.png", size: "75", alt: "user") %> &nbsp;
+              <h5 class="display-4">OUR MEMBERS</h5> 
+              &nbsp; <%= image_tag("img_avatar2.png", size: "75", alt: "user") %> &nbsp;
+              <%= image_tag("img_avatar5.png", size: "75", alt: "user") %> &nbsp;
+              <%= image_tag("img_avatar3.png", size: "75", alt: "user") %> &nbsp;
+              <%= image_tag("img_avatar6.png", size: "75", alt: "user") %>
+            </div>
+
+          </div>
+        </div>
+      </div>
     </div>
+
 
     <div class="row">
       <% @users.each do |user| %>
