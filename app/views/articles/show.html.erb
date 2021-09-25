@@ -1,7 +1,8 @@
 <div id="altbg">
 
 <div class="hero">
-  <h1 class="other"><%= @article.title %></h1> <br />
+  <h1 class="other"><%= @article.title %></h1> <br /> </p>
+  <p class="auth_img"><%= link_to gravatar_for(@article.user), user_path(@article.user) %>
   <p class="auth_ctr"><strong>Author:</strong> <em><%= @article.user.username %> </em></small></p>
 </div>
 

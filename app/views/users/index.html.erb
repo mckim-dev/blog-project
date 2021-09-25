@@ -1,5 +1,5 @@
 
-<div id="altbgfixed">
+<div id="altbg">
   <div class="container my-5">  
     <div class="card mb-4 shadow">
       <div class="row no-gutters">
@@ -35,7 +35,7 @@
 
       <div class="col-lg-4 col-md-6">
 
-        <div class="card shadow mb-5 bg-white rounded">
+        <div class="card shadow mb-4 bg-white rounded">
 
           <div class="card-body text-center">
             <h3><%= link_to user.username, user, class: "mysand-text" %></h3>
@@ -61,5 +61,10 @@
       <% end %>
 
     </div>
+
+    <div class="pagination justify-content-center p-3 mb-3">
+      <%= will_paginate @articles, :container => false %>
+    </div>
+
   </div>
 </div>

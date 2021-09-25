@@ -1,4 +1,4 @@
-<div id="altbgfixed">
+<div id="altbg">
   <div class="container-xl mt-4">
     <h1 class="display-4">List of Articles</h1>
     <br/>
@@ -16,7 +16,7 @@
             
             <br />
 
-            <small><strong>Author:</strong> <em><%= article.user.username %> </em></small> 
+            <small><strong>Author:</strong> <em><%= link_to article.user.username, user_path(article.user) %> </em></small> 
             <br />
             <p class="card-text">
 
@@ -34,6 +34,9 @@
       </div>
       <% random_num = random_num + 1 %> 
     <% end %>
+    </div>
+    <div class="pagination justify-content-center p-3 mb-3">
+      <%= will_paginate @articles, :container => false %>
     </div>
   </div>
 </div>

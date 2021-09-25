@@ -1,4 +1,4 @@
-<div id="altbgfixed">
+<div id="altbg">
   <div class="container my-5">  
     <div class="card mb-4">
       <div class="row no-gutters">
@@ -25,11 +25,15 @@
 
       <div class="card-footer text-white bg-transparent text-center px-5">
         <div class="row">
-          <div class="col-md-6">
-            <%= link_to "EDIT PROFILE", edit_user_path(@user), class: "btn btn-block btn-dark text-white" %>
+
+          <div class="col-sm-6 col-lg-4 mb-3">
+            <%= link_to "EDIT PROFILE", edit_user_path(@user), class: "btn btn-block btn-dark text-white shadow" %>
           </div>
-          <div class="col-md-6">
-            <%= link_to 'DELETE', user_path(@user), method: :delete, data: {confirm: "Confirm you want to delate your Account"}, class:"btn btn-block text-white mysecondary" %>
+          <div class="col-sm-6 col-lg-4 mb-3">
+            <%= link_to 'DELETE', user_path(@user), method: :delete, data: {confirm: "Confirm you want to delate your Account"}, class:"btn btn-block text-white mysecondary shadow" %>
+          </div>
+          <div class="pagination justify-content-center col-lg-4 mb-3">
+            <%= will_paginate @articles, :container => false %>
           </div>
         </div>      
       </div>
@@ -57,7 +61,7 @@
               <%= truncate(article.description, length: 75) %>
             </p>
                 
-            <%= link_to 'VIEW', article_path(article), class: "btn-sm text-white mysand" %> 
+            <%= link_to 'VIEW', article_path(article), class: "btn text-white mysand" %> 
             <%= link_to 'EDIT', edit_article_path(article), class: "btn btn-dark" %> 
             <%= link_to 'DELETE', article_path(article), method: :delete, data: {confirm: "Confirm you want to delate this article!"}, class:"btn text-white mysecondary" %>
           </div>

@@ -5,7 +5,7 @@ html, body {
 }
 .hero { 
   position: relative; 
-  height: 40vh;
+  height: 45vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -32,6 +32,10 @@ html, body {
   font-size: 6rem;
   line-height: 0.9;
   text-align: center;
+}
+.auth_img {
+  position: relative;
+  margin-bottom: 1.2rem;
 }
 .auth_ctr {
   color: #0d2a50;
@@ -148,3 +152,55 @@ h1, h2, h3, h4, h5 {
       max-width: 1160px;
   }
 }
+.pagination {
+  cursor: default;
+  text-transform: uppercase;
+  /* self-clearing method: */ }
+  .pagination a, .pagination span, .pagination em {
+    padding: 0.4em 0.8em;
+    display: block;
+    float: left;
+    margin-right: 5px;
+    background: rgb(140, 166, 187);
+    border-radius: 0.2em;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); }
+  .pagination .disabled {
+    color: #fff;
+    border: 1px solid rgb(140, 166, 187); }
+  .pagination .current {
+    font-style: normal;
+    font-weight: bold;
+    background: #184d94;
+    color: rgb(140, 166, 187);
+    border: 1px solid #184d94; }
+  .pagination a {
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid rgb(140, 166, 187);
+    background: rgb(140, 166, 187); }
+    .pagination a:hover, .pagination a:focus {
+      font-weight: bold;
+      background: #184d94;
+      color: #fff;
+      border-color: #184d94; }
+  .pagination .page_info {
+    background: #2e6ab1;
+    color: white;
+    padding: 0.4em 0.6em;
+    width: 22em;
+    margin-bottom: 0.3em;
+    text-align: center; }
+    .pagination .page_info b {
+      color: #000033;
+      background: #6aa6ed;
+      padding: 0.1em 0.25em; }
+  .pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  * html .pagination {
+    height: 1%; }
+  *:first-child + html .pagination {
+    overflow: hidden; }
