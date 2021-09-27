@@ -47,9 +47,17 @@
             <p class="card-text">Article count: <%= user.articles.count %> </p> 
           
 	          <%= link_to "View Profile", user, class: "btn text-white mysand mb-1" %> <br />
-            <% if logged_in? && user == current_user %>       
-              <%= link_to "Edit Profile", edit_user_path(user), class: "btn btn-dark" %> 
-            <% end %>    
+            <% if logged_in? %>
+              <% if user == current_user %>       
+                <%= link_to "Edit Profile", edit_user_path(user), class: "btn btn-dark mb-1" %> <br />
+              <% end %>
+              <% if current_user.admin? %>
+                <%= link_to "Delete User", user_path(user), class: "btn btn-danger", 
+                method: :delete, data: { confirm: "Are you sure you want to delete the user and all of their articles?"} %>
+              <% end %>
+
+
+            <% end %>
           </div>
 
           <div class="card-footer text-white mydark text-center">

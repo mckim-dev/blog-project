@@ -14,7 +14,7 @@
         <%= simple_format(@article.description) %>
       </div> 
 
-      <% if logged_in? && @article.user == current_user %>
+      <% if logged_in? && (@article.user == current_user || current_user.admin?) %>
         <%= link_to 'EDIT', edit_article_path(@article), class: "btn btn-sm btn-dark" %> 
         <%= link_to 'DELETE', article_path(@article), method: :delete, data: {confirm: "Confirm you want to delate this article!"}, class:"btn btn-sm text-white mysecondary" %>
       <% end %> 
