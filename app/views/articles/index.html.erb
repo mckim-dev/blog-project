@@ -23,8 +23,11 @@
             </p>
             
             <%= link_to 'VIEW', article_path(article), class: "btn btn-sm text-white mysand" %> 
-            <%= link_to 'EDIT', edit_article_path(article), class: "btn btn-sm btn-dark" %> 
-            <%= link_to 'DELETE', article_path(article), method: :delete, data: {confirm: "Confirm you want to delate this article!"}, class:"btn btn-sm text-white mysecondary" %>
+            
+            <% if logged_in? && article.user == current_user %>
+              <%= link_to 'EDIT', edit_article_path(article), class: "btn btn-sm btn-dark" %> 
+              <%= link_to 'DELETE', article_path(article), method: :delete, data: {confirm: "Confirm you want to delate this article!"}, class:"btn btn-sm text-white mysecondary" %>  
+            <% end %>
           </div>
 
           <div class="card-footer text-white mydark text-center">

@@ -46,9 +46,10 @@
 
             <p class="card-text">Article count: <%= user.articles.count %> </p> 
           
-	    <%= link_to "View Profile", user, class: "btn text-white mysand mb-1" %> <br />
-            <%= link_to "Edit Profile", edit_user_path(user), class: "btn btn-dark" %> 
-           
+	          <%= link_to "View Profile", user, class: "btn text-white mysand mb-1" %> <br />
+            <% if logged_in? && user == current_user %>       
+              <%= link_to "Edit Profile", edit_user_path(user), class: "btn btn-dark" %> 
+            <% end %>    
           </div>
 
           <div class="card-footer text-white mydark text-center">

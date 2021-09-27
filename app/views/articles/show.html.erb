@@ -12,10 +12,12 @@
     
       <div class="card-text">
         <%= simple_format(@article.description) %>
-      </div>
-      <%= link_to 'EDIT', edit_article_path(@article), class: "btn btn-dark" %> &nbsp; 
-      <%= link_to 'DELETE', article_path(@article), method: :delete, data: {confirm: "Confirm you want to delate this article!"}, class:"btn text-white mysecondary" %>
-      <%= link_to "BACK TO PROFILE", @article.user, class: "btn btn-dark float-right" %>
+      </div> 
+
+      <% if logged_in? && @article.user == current_user %>
+        <%= link_to 'EDIT', edit_article_path(@article), class: "btn btn-sm btn-dark" %> 
+        <%= link_to 'DELETE', article_path(@article), method: :delete, data: {confirm: "Confirm you want to delate this article!"}, class:"btn btn-sm text-white mysecondary" %>
+      <% end %> 
     </div>
     <div class="card-footer text-white mydark text-center">
       <em>Created: <%= time_ago_in_words(@article.created_at) %> ago.</em> | <strong> Updated: <%= time_ago_in_words(@article.updated_at) %> ago.</strong>

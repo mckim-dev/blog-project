@@ -26,12 +26,17 @@
       <div class="card-footer text-white bg-transparent text-center px-5">
         <div class="row">
 
-          <div class="col-sm-6 col-lg-4 mb-3">
-            <%= link_to "EDIT PROFILE", edit_user_path(@user), class: "btn btn-block btn-dark text-white shadow" %>
-          </div>
-          <div class="col-sm-6 col-lg-4 mb-3">
-            <%= link_to 'DELETE', user_path(@user), method: :delete, data: {confirm: "Confirm you want to delate your Account"}, class:"btn btn-block text-white mysecondary shadow" %>
-          </div>
+          <% if logged_in? && @user == current_user %>
+
+            <div class="col-sm-6 col-lg-4 mb-3">
+              <%= link_to "EDIT PROFILE", edit_user_path(@user), class: "btn btn-block btn-dark text-white shadow" %>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-3">
+              <%= link_to 'DELETE', user_path(@user), method: :delete, data: {confirm: "Confirm you want to delate your Account"}, class:"btn btn-block text-white mysecondary shadow" %>
+            </div>
+
+          <% end %>
+
           <div class="pagination justify-content-center col-lg-4 mb-3">
             <%= will_paginate @articles, :container => false %>
           </div>
@@ -62,8 +67,10 @@
             </p>
                 
             <%= link_to 'VIEW', article_path(article), class: "btn text-white mysand" %> 
-            <%= link_to 'EDIT', edit_article_path(article), class: "btn btn-dark" %> 
-            <%= link_to 'DELETE', article_path(article), method: :delete, data: {confirm: "Confirm you want to delate this article!"}, class:"btn text-white mysecondary" %>
+            <% if logged_in? && article.user == current_user %>
+              <%= link_to 'EDIT', edit_article_path(article), class: "btn btn-dark" %> 
+              <%= link_to 'DELETE', article_path(article), method: :delete, data: {confirm: "Confirm you want to delate this article!"}, class:"btn text-white mysecondary" %>
+            <% end %>  
           </div>
 
           <div class="card-footer text-white mydark text-center">
