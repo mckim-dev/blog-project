@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show,:edit,:update]
+  before_action :set_user, only: [:show,:edit,:update, :destroy]
   before_action :require_login, only: [:edit,:update]
-  before_action :require_user_permissions, only: [:edit,:update]
+  before_action :require_user_permissions, only: [:edit,:update, :destroy]
 
   def show 
     # @user = User.new(user_params)
@@ -43,8 +43,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:id])
+    
     @user.destroy
+    session[:user_id] = nil
+    flash[:notice] = "Your account and articles have been deleted."
     redirect_to articles_path
   end
 
