@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
     before_action :find_article, only: [:show, :edit, :update, :destroy]
+    before_action :require_login, except: [:show, :index]
+    before_action :require_user_permissions, only: [:edit, :update, :destroy]
 
     def show
         
@@ -52,6 +54,13 @@ class ArticlesController < ApplicationController
 
     def validateParams
       params.require(:article).permit(:title, :description)
+    end
+
+    def require_user_permissions
+      if current_user != @article.user
+        flash[:alert] = "You do not have permission to edit or delete another user's article."
+        redirect_to @article
+      end
     end
 
 end 

@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show,:edit,:update]
+  before_action :require_login, only: [:edit,:update]
+  before_action :require_user_permissions, only: [:edit,:update]
 
   def show 
-    @user = User.find(params[:id])
+    # @user = User.new(user_params)
     @articles = @user.articles.paginate(page: params[:page], per_page: 4)
   end
   
@@ -52,8 +54,13 @@ class UsersController < ApplicationController
   end
 
   def set_user
-
+    @user = User.find(params[:id])
   end
 
-
+  def require_user_permissions
+    if current_user != @user
+      flash[:alert] = "You can only edit your own account"
+      redirect_to @user
+    end
+  end
 end
