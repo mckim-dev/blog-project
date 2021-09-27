@@ -7,7 +7,7 @@ class CategoryTest < ActiveSupport::TestCase
   end
 
   test "category should be valid" do
-    assert @ category.valid?
+    assert @category.valid?
   end
 
   test "name should be present" do 
