@@ -1,6 +1,30 @@
 <div id="altbg">
-
   <div class="hero">
     <h1 class="other">Category: <%= @category.name %></h1> <br />
+  </div>
+  <div class="container-fluid px-5">
+    <div class="card shadow mb-5 mt-n5 bg-white rounded">
+      <div class="card-body">
+        <div class="card-text">
+          <p><strong>Hard code Category Description </strong> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Sed facilisis justo sit amet eros varius dapibus. Proin ligula augue, luctus suscipit dui in, 
+          hendrerit luctus turpis. Donec fringilla pretium augue vitae sollicitudin. Suspendisse fermentum 
+          pretium tellus, in posuere diam. Fusce leo quam, sollicitudin ut quam vitae, vehicula finibus mi. 
+          Fusce rhoncus enim eget leo viverra, quis fringilla ipsum tempor. Aenean tempor massa a tellus suscipit, 
+          vel elementum ligula pulvinar. </p>
+
+          <p>Wanec hendrerit ipsum quis ligula vestibulum cursus. Fusce ullamcorper ipsum a risus hendrerit gravida. 
+          Curabitur eget magna vulputate, fermentum lorem sed, hendrerit nisi. Nulla sit amet sollicitudin magna. 
+          Donec diam metus, posuere eu interdum luctus, fringilla vel libero.</p>
+        </div> 
+        
+          <%= link_to 'BACK TO CATEGORIES', categories_path, class: "btn btn-sm btn-dark float-right" %>
+        
+      </div>
+
+      <div class="card-footer text-white mydark text-center">
+        <em>Created: <%= time_ago_in_words(@category.created_at) %> ago.</em> | <strong> Updated: <%= time_ago_in_words(@category.updated_at) %> ago.</strong>
+      </div>
+    </div>
   </div>
 </div>
