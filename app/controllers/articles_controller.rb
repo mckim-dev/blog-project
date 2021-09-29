@@ -53,7 +53,7 @@ class ArticlesController < ApplicationController
     end
 
     def validateParams
-      params.require(:article).permit(:title, :description)
+      params.require(:article).permit(:title, :description, category_ids: [])
     end
 
     def require_user_permissions

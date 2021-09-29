@@ -24,20 +24,8 @@
       </div>
 
       <div class="card-footer text-white bg-transparent text-center px-5">
-        <div class="row">
-
-          <% if logged_in? && @user == current_user %>
-
-            <div class="col-sm-6 col-lg-4 mb-3">
-              <%= link_to "EDIT PROFILE", edit_user_path(@user), class: "btn btn-block btn-dark text-white shadow" %>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-3">
-              <%= link_to 'DELETE', user_path(@user), method: :delete, data: {confirm: "Confirm you want to delate your Account"}, class:"btn btn-block text-white mysecondary shadow" %>
-            </div>
-
-          <% end %>
-
-          <div class="pagination justify-content-center col-lg-4 mb-3">
+        <div class="row justify-content-center">
+          <div class="pagination mb-3">
             <%= will_paginate @articles, :container => false %>
           </div>
         </div>      

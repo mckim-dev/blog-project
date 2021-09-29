@@ -15,7 +15,15 @@
         <%= form.text_area :description, rows: 10, class: "form-control shadow-sm mb-4 p-3 bg-white rounded" %>
         </div>
       </div>
-    
+      <div class="form-group row mb-0">
+        <%= form.label :category, class: "col-2 col-form-label" %>
+        <div class="col-10">
+        <%= form.collection_select(:category_ids, Category.all, :id, :name,
+        { prompt: "<< -- Optional Category Selection -- >>"},{ multiple: true, size: 4, class: "custom-select mb-3 shadow-sm rounded" }) %>
+        <hr />
+        </div>
+      </div>
+
       <div class="form-group row justify-content-end"> 
           <%= form.submit class: "btn text-white mysecondary btn-lg" %>
       </div>
