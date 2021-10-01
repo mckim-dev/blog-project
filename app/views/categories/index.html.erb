@@ -20,7 +20,7 @@
                   <%= link_to category.name, category_path(category), class:"text-dark"%>
                 </h5>
                 <p class="card-text">Hard code category Description for now </p>
-                <p class="card-text"><small class="text-muted">Category Created: <%= time_ago_in_words(category.created_at) %> ago.</small></p>
+                <p class="card-text"><small class="text-muted">Article Count: <%= category.articles.count %><br /> Category Created: <%= time_ago_in_words(category.created_at) %> ago.</small></p>
               </div>
             </div>
 

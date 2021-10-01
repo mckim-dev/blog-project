@@ -1,15 +1,17 @@
 <div id="altbg">
   <div class="hero">
-    <h1 class="other">Category: <%= @category.name %></h1> <br />
+    <h1 class="other"><%= @category.name %></h1> <br />
+    
   </div>
   <div class="container-fluid px-5">
     <div class="card shadow mb-5 mt-n5 bg-white rounded">
       <div class="card-body">
         <div class="card-text">
+          <h6 class="mysand-text"> Article Count: <%= @category.articles.count %></h6>
+          <hr />
           <p><strong>Hard code Category Description </strong> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
           Sed facilisis justo sit amet eros varius dapibus. Proin ligula augue, luctus suscipit dui in, 
-          hendrerit luctus turpis. Donec fringilla pretium augue vitae sollicitudin. Suspendisse fermentum 
-          pretium tellus, in posuere diam. Fusce leo quam, sollicitudin ut quam vitae, vehicula finibus mi. 
+          hendrerit luctus. Fusce leo quam, sollicitudin ut quam vitae, vehicula finibus mi. 
           Fusce rhoncus enim eget leo viverra, quis fringilla ipsum tempor. Aenean tempor massa a tellus suscipit, 
           vel elementum ligula pulvinar. </p>
 
@@ -18,7 +20,11 @@
           Donec diam metus, posuere eu interdum luctus, fringilla vel libero.</p>
         </div> 
         
-          <%= link_to 'BACK TO CATEGORIES', categories_path, class: "btn btn-sm btn-dark float-right" %>
+        <%= link_to 'BACK TO CATEGORIES', categories_path, class: "btn btn-sm mysand btn-dark float-right " %> 
+        <% if logged_in? && current_user.admin? %>
+          <%= link_to "EDIT CATEGORY", edit_category_path(@category), class: "btn btn-sm btn-dark float-right mx-1" %>
+        <% end %>
+          
         
       </div>
 
@@ -26,5 +32,51 @@
         <em>Created: <%= time_ago_in_words(@category.created_at) %> ago.</em> | <strong> Updated: <%= time_ago_in_words(@category.updated_at) %> ago.</strong>
       </div>
     </div>
+  </div>
+
+  <div class="container-fluid px-5">
+    <div class="pagination justify-content-center p-3 mb-3">
+      <%= will_paginate @articles, :container => false %>
+    </div>
+
+    <div class="row">
+    <% random_num = 1 %>
+      <% @category.articles.each do |article| %>
+      <div class="col-lg-6">
+        <div class="card shadow mb-4 bg-white rounded text-center">     
+          <div class="card-body">
+          
+          <%= image_tag("https://picsum.photos/350/200?random=#{random_num}&blur=2") %> <br />
+            <h5 class="card-title m-3">
+                <%= link_to article.title, article_path(article), class:"text-dark" %>
+            </h5>
+            <small>
+              <strong>Author:</strong> <em><%= article.user.username %> </em>
+            </small> 
+            
+            <br />
+
+            <p class="card-text">
+              <%= truncate(article.description, length: 75) %>
+            </p>
+                
+            <%= link_to 'VIEW', article_path(article), class: "btn text-white mysand" %> 
+            <% if logged_in? && article.user == current_user %>
+              <%= link_to 'EDIT', edit_article_path(article), class: "btn btn-dark" %> 
+              <%= link_to 'DELETE', article_path(article), method: :delete, data: {confirm: "Confirm you want to delate this article!"}, class:"btn text-white mysecondary" %>
+            <% end %>  
+          </div>
+
+          <div class="card-footer text-white mydark text-center">
+            <em>Created: <%= time_ago_in_words(article.created_at) %> ago.</em>
+          </div>
+
+        </div>
+      </div>  
+      <% random_num = random_num + 1 %>      
+      <% end %>
+
+    </div>
+    
   </div>
 </div>

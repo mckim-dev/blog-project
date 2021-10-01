@@ -5,7 +5,7 @@ html, body {
 }
 .hero { 
   position: relative; 
-  height: 45vh;
+  height: 55vh;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -29,13 +29,13 @@ html, body {
 .other {
   position: relative;
   color: #ffffff;  
-  font-size: 6rem;
-  line-height: 0.9;
+  font-size: 4rem;
+  line-height: 1.2;
   text-align: center;
 }
 .auth_img {
   position: relative;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 .auth_ctr {
   color: #0d2a50;
@@ -43,6 +43,32 @@ html, body {
   font-size: 1.4rem;
   text-align: center;
 }
+.category_badge {
+  background-color: #d59071;
+  color: #fff;
+  position: relative;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+.category_badge :hover {
+  background-color: #c05b2c;
+  font-weight: bold;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.8em 1.3em;
+  font-size: 75%;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 1rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
 .opac_hero {
     content: "";
     position: absolute;
@@ -53,8 +79,6 @@ html, body {
     // background-color: rgba(0,0,0,0.25);
     background-color: rgba(235, 238, 248, 0.932);
 }
-
-
 
 #page-content {
   flex: 1 0 auto;
